@@ -1,0 +1,15 @@
+{
+    "author_name": "NimVek",
+    "author_email": "{{ cookiecutter.author_name|slugify(separator='', lowercase=False) }}@users.noreply.github.com",
+    "project_name": "Boilerplate",
+    "project_description": "An boilerplated package.",
+    "package_name": "{{ cookiecutter.project_name|slugify(separator='_') }}",
+    "package_version": "{% now 'utc', '%y.%m.0' %}",
+    "repository_name": "python-{{ cookiecutter.project_name|slugify }}",
+    "repository_user": "{{ cookiecutter.author_name|slugify(separator='', lowercase=False) }}",
+    "with_main": false,
+    "do_github": false,
+    "_copy_without_render": [
+        ".github/workflows/*"
+    ]
+}
