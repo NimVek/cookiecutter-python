@@ -5,7 +5,11 @@ import shutil
 
 
 def on_pre_build(config):
-    """Copy some files to docs dir."""
+    """Copy some files to docs dir.
+
+    Args:
+        config: global configuration object
+    """
     del config
 
     _copy = {
