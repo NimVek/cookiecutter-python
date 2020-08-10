@@ -114,6 +114,7 @@ pre-commit = "*"
 pytest = "*"
 pytest-cov = "*"
 pytest-randomly = "*"
+pytest-xdist = "*"
 toml-sort = "*"
 {%- if cookiecutter.with_main|string|lower in ['y', 'yes', 'true', 'on'] %}
 [tool.poetry.scripts]

@@ -108,7 +108,7 @@ jobs:
 
       - name: Test
         run: |
-          poetry run pytest --verbose --cov=src --cov-report=xml
+          poetry run pytest --verbose --numprocesses=auto --cov=src --cov-report=xml
 
       - name: Coverage
         uses: codecov/codecov-action@v1.0.11
