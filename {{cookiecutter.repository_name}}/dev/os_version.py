@@ -19,6 +19,7 @@ elif platform.system() == "Windows":
         18362: 1903,
         18363: 1909,
         19041: 2004,
+        19042: "20H2",
     }
     result = platform.platform()
     for i in versions:

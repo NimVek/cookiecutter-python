@@ -1,7 +1,7 @@
 ## Remove this section
 
 Please have a look at
-[our contribution documentation](https://github.com/{{ cookiecutter.repository_user }}/{{ cookiecutter.repository_name }}/blob/master/.github/CONTRIBUTING.md)
+[our contribution documentation](https://github.com/{{ cookiecutter.repository_user }}/{{ cookiecutter.repository_name }}/blob/main/.github/CONTRIBUTING.md)
 before submitting your Pull Request.
 
 Please note that the issue of this process apply to *all* pull requests, no

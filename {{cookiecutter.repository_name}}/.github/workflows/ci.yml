@@ -3,9 +3,9 @@ name: Continuous Integration
 
 on  :
   push:
-    branches: [master]
+    branches: [main]
   pull_request:
-    branches: [master]
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -38,7 +38,7 @@ jobs:
             lint-${{ runner.os }}-${{ matrix.python }}-
 
       - name: Set up Python ${{ matrix.python }}
-        uses: actions/setup-python@v2.1.1
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python }}
 
@@ -91,7 +91,7 @@ jobs:
             test-${{ runner.os }}-${{ matrix.python }}-
 
       - name: Set up Python ${{ matrix.python }}
-        uses: actions/setup-python@v2.1.1
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python }}
 
@@ -103,15 +103,15 @@ jobs:
 
       - name: Collect Environment
         run: |
-          echo "::set-env name=PYTHON::$(python -c 'import platform; print(platform.python_version())')"
-          echo "::set-env name=OS::$(python dev/os_version.py)"
+          echo "PYTHON=$(python -c 'import platform; print(platform.python_version())')" >> $GITHUB_ENV
+          echo "OS=$(python dev/os_version.py)" >> $GITHUB_ENV
 
       - name: Test
         run: |
           poetry run pytest --verbose --numprocesses=auto --cov=src --cov-report=xml
 
       - name: Coverage
-        uses: codecov/codecov-action@v1.0.11
+        uses: codecov/codecov-action@v1
         with:
           env_vars: OS, PYTHON
 
@@ -146,7 +146,7 @@ jobs:
             docs-${{ runner.os }}-${{ matrix.python }}-
 
       - name: Set up Python ${{ matrix.python }}
-        uses: actions/setup-python@v2.1.1
+        uses: actions/setup-python@v2
         with:
           python-version: ${{ matrix.python }}
 
