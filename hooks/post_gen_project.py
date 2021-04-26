@@ -106,7 +106,7 @@ class PostGenProjectHook(Hook):
         url = f"https://github.com/{self.repository_user}/{self.repository_name}.git"
         cmd = git.Git()
         cmd.remote("add", "origin", url)
-        cmd.push("--set-upstream", "origin", "master")
+        cmd.push("--set-upstream", "origin", "main")
         cmd.remote("set-url", "origin", url)
 
     def _version(self):
