@@ -9,7 +9,5 @@
     "repository_user": "{{ cookiecutter.author_name|slugify(separator='', lowercase=False) }}",
     "with_main": false,
     "do_github": false,
-    "_copy_without_render": [
-        ".github/workflows/*"
-    ]
+    "analyze_cron": "{{ range(0,60)|random }} {{ range(0,23)|random }} * * {{ range(0,7)|random }}"
 }
